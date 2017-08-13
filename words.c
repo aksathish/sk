@@ -1,17 +1,23 @@
 #include <stdio.h>
-#include <string.h>
  
-void main()
+int main(int argc, char *argv[])
 {
-    char s[200];
-    int count = 0, i;
+    int i = 0;
  
-    printf("enter the string\n");
-    scanf("%[^\n]s", s);
-    for (i = 0;s[i] != '\0';i++)
+    if (argc == 1)
     {
-        if (s[i] == ' ')
-            count++;    
+        printf("\n No sentence given on command line");
+        return;
     }
-    printf("number of words in given string are: %d\n", count + 1);
+    else
+    {
+        printf("\nThe words in the sentence are:");
+       
+        for (i = 1;i < argc;i++)
+        {
+            printf("\n%s", argv[i]);
+         }
+        printf("\n\nTotal number of words:");
+        printf(" %d", argc-1);
+    }
 }
